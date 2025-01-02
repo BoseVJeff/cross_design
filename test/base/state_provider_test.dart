@@ -139,6 +139,8 @@ void main() {
       IconSystem newIconSystem = IconSystem.cupertino;
       // Build context
       late BuildContext appContext;
+      // No. of times the child builder has re-rendered
+      int renderCnt = 0;
 
       await tester.pumpWidget(
         StateProvider(
@@ -147,6 +149,7 @@ void main() {
           initialIconSystem: iconSystem,
           child: Builder(builder: (context) {
             appContext = context;
+            renderCnt++;
             return Column(
               children: [
                 SizedBox(
@@ -178,6 +181,7 @@ void main() {
         find.byKey(Key("Icon: ${iconSystem.name}")),
         findsOneWidget,
       );
+      expect(renderCnt, equals(1));
 
       // Setting old values
       DesignState.of(appContext).setDesignSystem(appContext, designSystem);
@@ -195,6 +199,7 @@ void main() {
         find.byKey(Key("Icon: ${iconSystem.name}")),
         findsOneWidget,
       );
+      expect(renderCnt, equals(1));
 
       // Setting new values
       DesignState.of(appContext).setDesignSystem(appContext, newDesignSystem);
@@ -212,6 +217,7 @@ void main() {
         find.byKey(Key("Icon: ${newIconSystem.name}")),
         findsOneWidget,
       );
+      expect(renderCnt, equals(2));
     },
   );
 }
