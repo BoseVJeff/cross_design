@@ -1,6 +1,7 @@
 export 'src/base/design_system.dart';
 export 'src/base/state_provider.dart';
 export 'src/base/cross_widget.dart';
+export 'src/base/cross_theme.dart';
 
 /// A Calculator.
 class Calculator {
