@@ -1,5 +1,4 @@
 import 'package:cross_design/cross_design.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -25,7 +24,7 @@ void main() {
     // This is because the defaults may be platform-specific in the future, and this covers for that.
     // Basically some pre-emptive tests to ensure that we don't depend on the values to be the same for all platforms.
     testWidgets(
-      "Package Defaults",
+      'Package Defaults',
       (WidgetTester tester) async {
         await tester.pumpWidget(
           StateProvider(
@@ -49,7 +48,7 @@ void main() {
     );
     // Testing that the values initially set are retained and made available properly.
     testWidgets(
-      "User-defined Initial Design",
+      'User-defined Initial Design',
       (WidgetTester tester) async {
         await tester.pumpWidget(
           StateProvider(
@@ -80,7 +79,7 @@ void main() {
     // This is because the defaults may be platform-specific in the future, and this covers for that.
     // Basically some pre-emptive tests to ensure that we don't depend on the values to be the same for all platforms.
     testWidgets(
-      "Package Defaults",
+      'Package Defaults',
       (WidgetTester tester) async {
         await tester.pumpWidget(
           StateProvider(
@@ -104,7 +103,7 @@ void main() {
     );
     // Testing that the values initially set are retained and made available properly.
     testWidgets(
-      "User-defined Initial Design",
+      'User-defined Initial Design',
       (WidgetTester tester) async {
         await tester.pumpWidget(
           StateProvider(
@@ -129,7 +128,7 @@ void main() {
   });
 
   testWidgets(
-    "Changing Values",
+    'Changing Values',
     (WidgetTester tester) async {
       // Initial Values
       DesignSystem designSystem = DesignSystem.material;
@@ -144,7 +143,7 @@ void main() {
 
       await tester.pumpWidget(
         StateProvider(
-          key: Key("state"),
+          key: Key('state'),
           initialDesignSystem: designSystem,
           initialIconSystem: iconSystem,
           child: Builder(builder: (context) {
@@ -154,14 +153,14 @@ void main() {
               children: [
                 SizedBox(
                   key: Key(
-                    "Design: ${DesignState.of(context).designSystem.name}",
+                    'Design: ${DesignState.of(context).designSystem.name}',
                   ),
                   height: 10,
                   width: 10,
                 ),
                 SizedBox(
                   key: Key(
-                    "Icon: ${DesignState.of(context).iconSystem.name}",
+                    'Icon: ${DesignState.of(context).iconSystem.name}',
                   ),
                   height: 10,
                   width: 10,
@@ -174,11 +173,11 @@ void main() {
 
       // Verify initial state
       expect(
-        find.byKey(Key("Design: ${designSystem.name}")),
+        find.byKey(Key('Design: ${designSystem.name}')),
         findsOneWidget,
       );
       expect(
-        find.byKey(Key("Icon: ${iconSystem.name}")),
+        find.byKey(Key('Icon: ${iconSystem.name}')),
         findsOneWidget,
       );
       expect(renderCnt, equals(1));
@@ -192,11 +191,11 @@ void main() {
 
       // Verify lack of change in state
       expect(
-        find.byKey(Key("Design: ${designSystem.name}")),
+        find.byKey(Key('Design: ${designSystem.name}')),
         findsOneWidget,
       );
       expect(
-        find.byKey(Key("Icon: ${iconSystem.name}")),
+        find.byKey(Key('Icon: ${iconSystem.name}')),
         findsOneWidget,
       );
       expect(renderCnt, equals(1));
@@ -210,11 +209,11 @@ void main() {
 
       // Test updated values
       expect(
-        find.byKey(Key("Design: ${newDesignSystem.name}")),
+        find.byKey(Key('Design: ${newDesignSystem.name}')),
         findsOneWidget,
       );
       expect(
-        find.byKey(Key("Icon: ${newIconSystem.name}")),
+        find.byKey(Key('Icon: ${newIconSystem.name}')),
         findsOneWidget,
       );
       expect(renderCnt, equals(2));

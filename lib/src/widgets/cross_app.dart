@@ -2,10 +2,9 @@ import 'package:cross_design/src/base/cross_theme.dart';
 import 'package:cross_design/src/base/cross_theme_mode.dart';
 import 'package:cross_design/src/base/cross_widget.dart';
 import 'package:cross_design/src/widgets/cupertino_app_compat.dart';
-import 'package:flutter/widgets.dart';
-
-import 'package:flutter/material.dart' as mat;
 import 'package:fluent_ui/fluent_ui.dart' as flu;
+import 'package:flutter/material.dart' as mat;
+import 'package:flutter/widgets.dart';
 import 'package:macos_ui/macos_ui.dart' as mac;
 
 class CrossApp extends CrossWidget {
