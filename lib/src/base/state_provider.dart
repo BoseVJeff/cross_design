@@ -75,7 +75,7 @@ class DesignState extends InheritedWidget {
 
   static DesignState of(BuildContext context) {
     DesignState? state = DesignState.maybeOf(context);
-    assert(state != null, "No DesignState found in context");
+    assert(state != null, 'No DesignState found in context');
     return state!;
   }
 

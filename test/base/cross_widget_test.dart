@@ -1,5 +1,4 @@
 import 'package:cross_design/cross_design.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 // Test scaffolding for all design values
@@ -78,7 +77,7 @@ class CrossIconTest extends CrossIcon {
 
 void main() {
   testWidgets(
-    "Cross Widget",
+    'Cross Widget',
     (WidgetTester tester) async {
       await tester.pumpWidget(StateProvider(
         initialDesignSystem: designs.currentValue,
@@ -90,7 +89,7 @@ void main() {
     variant: designs,
   );
   testWidgets(
-    "Cross Icon",
+    'Cross Icon',
     (WidgetTester tester) async {
       await tester.pumpWidget(StateProvider(
         initialIconSystem: icons.currentValue,
